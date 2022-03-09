@@ -1,0 +1,52 @@
+
+curl -i 'localhost:8080/valtech/initDb'
+curl -i 'localhost:8080/valtech/getUsersToDos'
+curl -i 'localhost:8080/valtech/getUsersOfferts'
+curl -i 'localhost:8080/valtech/getLists'
+
+
+userID is from authState
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/getHashPassword' -d '{"password": "qvik"}'
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/authenticate' -d '{"username": "valtech", "password": "valtech"}'
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/getUserToDosByUserId' -d '{"userId": 0}'
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/getHashPassword' -d '{"username": "qvik"}'
+
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/getUserOffertsByUserId' -d '{"userId": 0}'
+
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/updateUserTodos' -d '
+{
+    "id": 1,
+    "userId": 0,
+    "name": "myList",
+    "toDo": [{"id": 1, "desc": "go for a walk"}, {"id": 2, "desc": "do something else"}, {"id": 3, "desc": "do something else2"}]
+}'
+
+
+
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/addUserOffert' -d '
+{
+    "companyName": "qvik",
+    "userId": 2,
+    "offert": {
+        "email": "qvik@qvik.se",
+        "mobile": "123456",
+        "adressA": "the adress3",
+        "adressB": "the other adress3",
+        "distanceAToB": 12,
+        "distanceUnit": "km",
+        "area": 71,
+        "garretArea": 11,
+        "havePiano": "yes",
+        "packagingHelp": "yes",
+        "price": 30
+    }
+}'
+
+
+curl -H "Content-Type: application/json" -XPOST 'localhost:8080/valtech/addUserOffert' -d '
+{
+    "id": 6,
+    "companyName": "qvik",
+    "userId": 2,
+    "offert": {"test": "ost"}
+}'

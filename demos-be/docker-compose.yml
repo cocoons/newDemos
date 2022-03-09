@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  demos_db:
+    container_name: demos-db
+    image: postgres  
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    env_file:
+      - dbcredentials.env
+
+  #demos_fe:
+  #  container_name: demos-fe
+  #  build:
+  #    context: ../demos-fe
+  #    dockerfile: Dockerfile    
+  #  ports:
+  #    - 19006:19006
+  #    - 19001:19001
+  #    - 19002:19002
+  #  expose:
+  #    - 19006      
+  #    - 19001
+  #    - 19002
+  #  env_file:
+  #    - apicredentials.env
+
+  #demos_be:
+  #  container_name: demos_be
+  #  build:
+  #    context: .
+  #    dockerfile: Dockerfile
+  #  environment:
+  #    - POSTGRES_URL=postgres://demos:demos@0.0.0.0:5432/demos
+  #  restart: on-failure
+  #  ports:
+  #    - 8080:8080
+  #  expose:
+  #    - 8080 
+
+networks:
+  default:
+    driver: bridge

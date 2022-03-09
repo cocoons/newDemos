@@ -1,2 +1,4 @@
 # newDemos
-a new streamlined installation process
+a new more streamlined installation process
+
+### # read demos-be/README.md
