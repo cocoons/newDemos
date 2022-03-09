@@ -21,8 +21,9 @@ docker-compose up
 # Initialize the database with demo data
 curl -i 'localhost:8080/valtech/initDb'
 
-```
-#### run server as a container run Dockerfile (make sure the postgres container is up first "docker-compose-up")
+<br>
+
+# run server as a container run Dockerfile (make sure the postgres container is up first "docker-compose-up")
 ```
 #### # cd newDemos/demos-be 
 
