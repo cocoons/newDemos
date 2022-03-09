@@ -15,13 +15,9 @@
 docker-compose up
 
 #### # node ./expressServer.js (make sure the postgres container is up first "docker-compose-up")
-  
-<br> 
 
 # Initialize the database with demo data
 curl -i 'localhost:8080/valtech/initDb'
-
-<br>
 
 # run server as a container run Dockerfile (make sure the postgres container is up first "docker-compose-up")
 ```
