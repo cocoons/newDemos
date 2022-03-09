@@ -1,7 +1,6 @@
 # demos-be
-```
-#### manual installation
-```
+
+## manual installation
 ```
 #### # git clone git@github.com:cocoons/newDemos.git
 
@@ -15,11 +14,14 @@
 docker-compose up
 
 #### # node ./expressServer.js (make sure the postgres container is up first "docker-compose-up")
+```
 
-# Initialize the database with demo data
+## Initialize the database with demo data
+```
 curl -i 'localhost:8080/valtech/initDb'
+```
 
-# run server as a container run Dockerfile (make sure the postgres container is up first "docker-compose-up")
+## run server as a container run Dockerfile (make sure the postgres container is up first "docker-compose-up")
 ```
 #### # cd newDemos/demos-be 
 

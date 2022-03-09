@@ -13,7 +13,7 @@ import { TextInput } from 'react-native-element-textinput';
 const getUserOfferts = (userId, setCompanyOffertsLists, setWaitForData) => {
   //console.log('userID is: ', userId)
   axios
-    .post('http://172.29.91.47:8080/' + `valtech/getUserOffertsByUserId`, {'userId': userId} )
+    .post('http://localhost:8080/' + `valtech/getUserOffertsByUserId`, {'userId': userId} )
     .then(res => {
         console.log(`received user data in getUserData is:`, res.data)
         setCompanyOffertsLists(res.data)
@@ -23,7 +23,7 @@ const getUserOfferts = (userId, setCompanyOffertsLists, setWaitForData) => {
   const addUserOffertToUser = (data, setCompanyOffertsLists) => {
     //console.log('userID is: ', userId)
     axios
-      .post('http://172.29.91.47:8080/' + `valtech/addUserOffert`, data )
+      .post('http://localhost:8080/' + `valtech/addUserOffert`, data )
       .then(res => {
           console.log(`received data in addUserOffert is:`, res.data)
           setCompanyOffertsLists(res.data)

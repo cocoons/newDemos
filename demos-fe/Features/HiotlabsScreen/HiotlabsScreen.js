@@ -27,7 +27,7 @@ export const HiotlabsScreen = () => {
       //Change here to the ip you run the express server on it uses cors just for local testing between container and localhost
       //so as long as it finds the express server it should work fine
 
-      .get('http://172.29.91.47:8080/' + `valtech/getLists` )
+      .get('http://localhost:8080/' + `valtech/getLists` )
       .then(res => {
           console.log(`received user data in getUserData is:`, res.data)
           setCompanyLists(res.data)

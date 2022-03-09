@@ -11,7 +11,7 @@ const authenticate = (username, password, dispatch) => {
   console.log("username is: ", username)
   axios
       /// authenticate
-      .post('http://172.29.91.47:8080/' + `valtech/authenticate`, {"username": username, "password": password})
+      .post('http://localhost:8080/' + `valtech/authenticate`, {"username": username, "password": password})
       .then(res => {
           dispatch(updateLogin(res.data))
       })

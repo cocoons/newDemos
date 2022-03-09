@@ -11,7 +11,7 @@ import { Card } from 'react-native-elements'
 const getUserOfferts = (userId, setUserOffertsList, setWaitForData) => {
   //console.log('userID is: ', userId)
   axios
-    .post('http://172.29.91.47:8080/' + `valtech/getUserOffertsByUserId`, {'userId': userId} )
+    .post('http://localhost:8080/' + `valtech/getUserOffertsByUserId`, {'userId': userId} )
     .then(res => {
         console.log(`received user data in getUserOfferts is:`, res.data)
         setUserOffertsList(JSON.parse(JSON.stringify(res.data)))

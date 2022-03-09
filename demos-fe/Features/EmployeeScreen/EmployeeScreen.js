@@ -28,7 +28,7 @@ export const EmployeeScreen = ({route, navigation}) => {
   const getUserToDos = (userId) => {
     console.log('userId is: ', userId)
     axios
-      .post('http://172.29.91.47:8080/' + `valtech/getUserToDosByUserId`, {userId: userId} )
+      .post('http://localhost:8080/' + `valtech/getUserToDosByUserId`, {userId: userId} )
       .then(res => {
           console.log(`received user data in getUserToDos is:`, res.data)
           setUserToDos(res.data)
@@ -39,7 +39,7 @@ export const EmployeeScreen = ({route, navigation}) => {
   const sendUpdateUserTodos = (todoObj) => {
     console.log('todoObj is: ', todoObj)
     axios
-      .post('http://172.29.91.47:8080/' + `hiotlabs/updateUserTodos`, {todoObj} )
+      .post('http://localhost:8080/' + `hiotlabs/updateUserTodos`, {todoObj} )
       .then(res => {
           console.log(`received user data in sendUpdateUserTodos is:`, res.data)
       })
